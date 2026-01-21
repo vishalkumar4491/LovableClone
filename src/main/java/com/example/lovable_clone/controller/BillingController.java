@@ -1,9 +1,6 @@
 package com.example.lovable_clone.controller;
 
-import com.example.lovable_clone.dto.subscription.CheckoutRequest;
-import com.example.lovable_clone.dto.subscription.CheckoutResponse;
-import com.example.lovable_clone.dto.subscription.PortalResponse;
-import com.example.lovable_clone.dto.subscription.SubscriptionResponse;
+import com.example.lovable_clone.dto.subscription.*;
 import com.example.lovable_clone.service.PlanService;
 import com.example.lovable_clone.service.SubscriptionService;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +19,7 @@ public class BillingController {
     private final PlanService planService;
 
     @GetMapping("/api/plans")
-    public ResponseEntity<List<PlanService>> getAllPlans() {
+    public ResponseEntity<List<PlanResponse>> getAllPlans() {
         return ResponseEntity.ok(planService.getAllActivePlans());
     }
 

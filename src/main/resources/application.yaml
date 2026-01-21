@@ -2,3 +2,21 @@ spring:
   application:
     name: lovable-clone
     description: This is clone of Lavable Software with some more functionalities
+
+  datasource:
+    url: jdbc:postgresql://localhost:9000/testDB
+    username: testUser
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        time_zone: Asia/Kolkata
+

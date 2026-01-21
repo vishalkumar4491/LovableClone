@@ -6,6 +6,7 @@ import com.example.lovable_clone.dto.project.ProjecySummaryResponse;
 import com.example.lovable_clone.service.ProjectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +30,7 @@ public class ProjectController {
         return ResponseEntity.ok(projectService.getUserProjectById(id, userId));
     }
 
-    @PostMapping
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ProjectResponse> createProject(@RequestBody Projectrequest request) {
         Long userId = 1L; // TODO: get userId from token
         return ResponseEntity.status(HttpStatus.CREATED).body(projectService.createProject(request, userId));

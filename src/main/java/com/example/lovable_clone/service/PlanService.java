@@ -1,9 +1,10 @@
 package com.example.lovable_clone.service;
 
+import com.example.lovable_clone.dto.subscription.PlanResponse;
 import org.jspecify.annotations.Nullable;
 
 import java.util.List;
 
 public interface PlanService {
-    List<PlanService> getAllActivePlans();
+    List<PlanResponse> getAllActivePlans();
 }

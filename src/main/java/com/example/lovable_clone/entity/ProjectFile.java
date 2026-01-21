@@ -46,8 +46,12 @@ public class ProjectFile {
     @Column(name = "updated_at")
     Instant updatedAt;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "created_by")
     User createdBy;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "updated_by")
     User updatedBy;
 
     @PrePersist

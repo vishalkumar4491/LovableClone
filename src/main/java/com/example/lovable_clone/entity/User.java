@@ -35,7 +35,7 @@ public class User {
     @Column(name = "avatar_url", length = 500)
     private String avatarUrl;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at")
     private Instant createdAt;
 
     private Instant updateAt;
